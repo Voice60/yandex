@@ -2,7 +2,7 @@ import Head from "next/head";
 
 export default function Home({ip}) {
 
-  console.log(ip)
+  console.error(ip)
   return (
     <div>
       <Head>
@@ -40,7 +40,7 @@ export default function Home({ip}) {
 export async function getServerSideProps({ req }) {
   const ip = req.headers["x-real-ip"] || req.connection.remoteAddress;
 
-  console.log(ip);
+  console.error(ip);
 
   return {
     props: {ip},
